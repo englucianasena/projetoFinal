@@ -1,1 +1,84 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Agendamento</title>
+</head>
+<body>
+    <h1>Agendamento</h1>
+    <!-- 1. Efetuar Login
+    2. Preencher dados para o Agendamento
+    3. Cliente solicita o Agendamento
+    4. Verificar status de Agendamento
+    5. Status ok
+    6. Agendamento realizado com sucesso
+    7. Não a disponibilidade
+    6. Cadastro de cliente -->
+<form>
+    Nome: <br>
+    E-mail: <br>
+    Fone: <br>
+    <div>
+        <label for="diaa">Informe a data do seu aniversário:</label>
+        <input type="date" id="diaa" name="diaa">
+    </div>
+    <select name="servicos">
+        <option value="Selecione">Selecione Serviço</option>
+        <option value="acabamentos">Acabamentos</option>
+        <option value="corte">Corte</option>
+        <option value="máquina">Máquina</option>
+        <option value="sobrancelha">Sobrancelha</option>
+    </select> <br>
+    <div>
+        <label for="agendamento">Escolha a data de agendamento:</label>
+        <input type="date" id="agendamento" name="agendamento" min="2022-12-19" max="2022-12-31" required>
+        <span class="validity"></span>
+    </div>
+    <div>
+    <label for="hora-cons">Escolha o horário: </label>
+    <input id="hora-cons" type="time" name="hora-cons" value="08:00" min="08:00" max="21:00">
+    <span class="validacao"></span>
+    </div>
+    <!-- <div>
+        <input type="submit">
+    </div> -->
+    <input type="button" value="Clique Aqui" onclick="msg()">
+</form> 
+
+<script>
+    function msg() {
+    alert("Agendamento realizado com sucesso!");
+}
+</script>
+<style>
+    div {
+margin-bottom: 10px;
+position: relative;
+}
+
+input[type="number"] {
+width: 100px;
+}
+
+input + span {
+padding-right: 30px;
+}
+
+input:invalid+span:after {
+position: absolute;
+content: '✖';
+padding-left: 5px;
+}
+
+input:valid+span:after {
+position: absolute;
+content: '✓';
+padding-left: 5px;
+}
+
+</style>
+</body>
+</html>
